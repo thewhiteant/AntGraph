@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <style>
+    body{
+        text-align: center;
+        
+    }
+
+
+    </style>
+</head>
+<body>
+    <form action="#" th:action="@{/signup}"  th:object="${data}" method="post" class="form">
+        <input type="text" th:field="*{username}" name="username" class="usr" placeholder="username"><br/>
+        <input type="password" th:field="*{password}" name="password" placeholder="password"  class="pswd">
+        <br/>
+        <input type="password"  placeholder="Re-type password">
+        <br/>
+        <input type="email" th:field="*{email}" placeholder="Email Address">
+        <br/>
+        <input type="date" th:field="*{age}">
+        <br/>
+        <div th:field="*{gender}">
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        </div>
+            <br/><br/>
+        <input type="submit" name="submit" value="SignUp" class="submit_btn">
+    </form>
+
+
+</body>
+</html>
