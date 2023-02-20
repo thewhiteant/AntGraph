@@ -20,7 +20,16 @@ public class Antmodel {
     private String email;
     @Column(name = "gender")
     private String gender;
+    @Column(name = "GraphID")
+    private int graphId;
 
+    public int getGraphId() {
+        return graphId;
+    }
+
+    public void setGraphId(int graphId) {
+        this.graphId = graphId;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -74,11 +83,12 @@ public class Antmodel {
     public Antmodel(){
 
     }
-    public Antmodel(String username, String password, String email, String age, String gender) {
+    public Antmodel(String username, String password, String email, String age, String gender , int GI) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.age = age;
         this.gender = gender;
+        this.graphId = GI;
     }
 }

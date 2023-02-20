@@ -9,4 +9,5 @@ import java.util.List;
 public interface ControlDB extends JpaRepository<Antmodel, Integer> {
     Antmodel findAllById(int i);
     Antmodel findAllByUsername(String whiteant);
+
 }
