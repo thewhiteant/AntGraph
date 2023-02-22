@@ -16,12 +16,12 @@
 <body>
 <!--    TODO: Javacropt  for match and re type and emptyt field -->
     <form action="#" th:action="@{/signup}"  th:object="${data}" method="post" class="form">
-        <input type="text" th:field="*{username}" name="username" class="usr" placeholder="username"><br/>
+        <input type="text" th:field="*{username}" name="username" class="usr" placeholder="username" autocomplete="none"><br/>
         <input type="password" th:field="*{password}" name="password" placeholder="password"  class="pswd">
         <br/>
         <input type="password"  placeholder="Re-type password">
         <br/>
-        <input type="email" th:field="*{email}" placeholder="Email Address">
+        <input type="email" th:field="*{email}" placeholder="Email Address" autocomplete="none">
         <br/>
         <input type="date" th:field="*{age}">
         <br/>
