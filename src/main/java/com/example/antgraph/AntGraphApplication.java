@@ -11,9 +11,6 @@ public class AntGraphApplication {
     private static ControlDB rep;
     public static void main(String[] args) {
             SpringApplication.run(AntGraphApplication.class, args);
-
-
-
     }
 
 }

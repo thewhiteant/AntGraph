@@ -125,6 +125,12 @@ void LoadGraph() {
     }
 
 
+//    public static void main(String[] args) {
+//        MainGraphControl tes = new MainGraphControl(12+1);
+//        tes.LoadGraph();
+//        tes.BFS(12);
+//    }
+
 }
 
 

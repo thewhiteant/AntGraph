@@ -14,17 +14,12 @@ public class AntController {
 
     @Autowired
     ControlDB repo;
-
-
     //Home section
-
-
 
     @GetMapping("/")
     public String home() {
         return "Home";
     }
-
     //Login section
 
     @GetMapping("/login")
@@ -48,25 +43,22 @@ public class AntController {
             if (Username == null) System.out.println("User Not Exist");
             else {
                 if (data.getUsername().equals(Username) && data.getPassword().equals(Password)) {
-                    MainGraphControl test = new MainGraphControl(repo.findAll().size());
+                    MainGraphControl test = new MainGraphControl(repo.findAll().size()+1);
                     test.LoadGraph();
-//                    model.addAttribute("item",test.BFS(data.getGraphId()));
                     List<String> items = new ArrayList<>();
-                    for (int i:test.BFS(data.getGraphId()))
+                    for (int i:test.DFS(data.getGraphId()))
                     {
                        Antmodel usr = repo.findByGraphId(i);
                        items.add(usr.getUsername());
                     }
 
-                    System.out.println(items);
                     model.addAttribute("items", items);
-
                     return "Home";
                 }
             }
-//
+
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
 
         }
 
@@ -121,6 +113,7 @@ public class AntController {
     }
 
 }
+
 
 
 
